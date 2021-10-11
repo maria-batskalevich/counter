@@ -1,0 +1,68 @@
+body {
+    background-color: #6B5113;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #EEC972;
+    border-radius: 10px;
+    height: 150px;
+    line-height: 150px;
+    margin-bottom: 20px;
+    font-size: 60px;
+
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    border: #EEC972 3px solid;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+
+.button {
+    width: 200px;
+    border-radius: 10px;
+    font-size: 40px;
+    height: 50px;
+    background-color: #EEC972;
+    border: 1px solid #671101;
+    margin-left: 10px;
+    color: #423620;
+}
+
+.text {
+    color: #423620;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.alarmText {
+    color: red;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+
