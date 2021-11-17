@@ -1,21 +1,20 @@
-import React from 'react';
-import s from './App.module.css'
+import React from "react";
 
-type ButtonType = {
-    callback: () => void
-    title: string
-    count: number
-}
 
-export const Button = (props: ButtonType) => {
+type ButtonPropsType = {
+    buttonValue: string;
+    buttonDisabled: boolean;
+    onClickHandler: () => void;
+};
 
+export function Button(props: ButtonPropsType) {
     return (
-        <div>
-            <button
-                className={s.button}
-                onClick={props.callback}
-                disabled={(props.count === 5 && props.title === 'inc') || (props.count === 0 && props.title === 'reset')}
-            >{props.title}</button>
-        </div>
-    )
+        <button
+            disabled={props.buttonDisabled}
+            onClick={props.onClickHandler}
+            className={props.buttonDisabled ? "button-disabled" : "button"}
+        >
+            {props.buttonValue}
+        </button>
+    );
 }
