@@ -1,5 +1,6 @@
 import React, {ChangeEvent} from "react";
 import {Button} from "./Button";
+import s from './App.module.scss'
 
 
 type CounterSettingsPropsType = {
@@ -24,30 +25,30 @@ export function CounterSettings(props: CounterSettingsPropsType) {
     };
 
     return (
-        <div className={"app"}>
-            <div className={'tableWrapper'}>
-                <div className={'input'}>
+        <div className={s.app}>
+            <div className={s.tableWrapper}>
+                <div className={s.input}>
 
                     <div>
-                        <span className={"inputText"}>min value: </span>
+                        <span className={s.inputText}>min value: </span>
                         <input
-                            className={props.isError ? "input-error" : "input-line"}
-                            type={"number"}
+                            className={props.isError ? s.inputError : s.inputLine}
+                            type={s.number}
                             onChange={updateMinValueHandler}
                             value={props.minValue}
                         />
                     </div>
                     <div>
-                        <span className={"inputText"}>max value: </span>
+                        <span className={s.inputText}>max value: </span>
                         <input
-                            className={props.isError ? "input-error" : "input-line"}
+                            className={props.isError ? s.inputError : s.inputLine}
                             type={"number"}
                             onChange={updateMaxValueHandler}
                             value={props.maxValue}
                         />
                     </div>
                 </div>
-                <div className={'buttons'}>
+                <div className={s.buttons}>
                     {props.isCounting ? (
                         <Button
                             buttonValue={"set"}

@@ -1,5 +1,6 @@
 import React from "react";
 import {Button} from "./Button";
+import s from './App.module.scss'
 
 
 type CounterTableauPropsType = {
@@ -14,12 +15,12 @@ type CounterTableauPropsType = {
 
 export function CounterTable(props: CounterTableauPropsType) {
     return (
-        <div className={"app"}>
-            <div className={'tableWrapper tableClassName'}>
+        <div className={s.app}>
+            <div className={s.tableWrapper}>
                 {props.isCounting ? (
                     <>
-                        <div className={'counter'}>{props.value}</div>
-                        <div className={'buttons'}>
+                        <div className={s.counter}>{props.value}</div>
+                        <div className={s.buttons}>
                             <Button
                                 buttonValue={"inc"}
                                 onClickHandler={props.incValue}
@@ -36,14 +37,14 @@ export function CounterTable(props: CounterTableauPropsType) {
                     </>
                 ) : (
                     <>
-                        <div className={'counter'}>
-            <span className={props.isError ? "text-error" : "text-disabled"}>
+                        <div className={s.counter}>
+            <span className={props.isError ? s.textError : s.textDisabled}>
               {props.isError
                   ? "Incorrect value!"
                   : `Enter values and press "set"`}
             </span>
                         </div>
-                        <div className={'buttons'}>
+                        <div className={s.buttons}>
 
                             <Button
                                 buttonValue={"inc"}

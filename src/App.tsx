@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import s from "./App.module.scss";
 import {CounterSettings} from "./CounterSettings";
 import {CounterTable} from "./CounterTable";
 import {useDispatch, useSelector} from "react-redux";
@@ -51,7 +51,7 @@ export const App = () => {
     };
 
     return (
-        <div className={'appWrapper'}>
+        <div className={s.appWrapper}>
             <CounterSettings
                 maxValue={maxValue}
                 minValue={minValue}

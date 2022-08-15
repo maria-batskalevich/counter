@@ -1,0 +1,165 @@
+body {
+  background-color: #6B5113;
+}
+
+.app {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.appWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.tableWrapper {
+  border: #EEC972 3px solid;
+  border-radius: 10px;
+  padding: 15px;
+  width: 500px;
+  margin-right: 20px;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #EEC972;
+  border-radius: 10px;
+  height: 150px;
+  line-height: 150px;
+  margin-bottom: 20px;
+  font-size: 60px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  border: #EEC972 3px solid;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+
+.button {
+  width: 200px;
+  height: 50px;
+  border: 1px solid #671101;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: #EEC972;
+  font-size: 40px;
+  color: #423620;
+  font-weight: bold;
+}
+
+.buttonDisabled {
+  opacity: 0.5;
+  width: 200px;
+  height: 50px;
+  border: 1px solid #671101;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: #EEC972;
+  font-size: 40px;
+  color: #666666;
+}
+
+.input {
+  background-color: #EEC972;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  height: 150px;
+}
+
+input {
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 25px;
+  width: 100px;
+  border-radius: 10px;
+  border: #6B5113 2px solid;
+
+}
+
+.inputText {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.table {
+  width: 300px;
+  height: 150px;
+  border: 5px solid dimgray;
+  border-radius: 10px;
+  margin: 20px auto 20px auto;
+  background-color: darkcyan;
+  font-size: 100px;
+}
+
+.tableMax {
+  width: 300px;
+  height: 150px;
+  border: 5px solid dimgray;
+  border-radius: 10px;
+  margin: 20px auto 20px auto;
+  background-color: darkcyan;
+  font-size: 100px;
+  color: #8b3d4b;
+}
+
+.tableDisabled {
+  width: 300px;
+  height: 150px;
+  border: 5px solid dimgray;
+  border-radius: 10px;
+  margin: 20px auto 20px auto;
+  background-color: darkcyan;
+}
+
+.textDisabled {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.textError {
+  font-weight: bold;
+  font-size: 30px;
+  color: #8b3d4b;
+}
+
+.inputError {
+  width: 100px;
+  height: 30px;
+  border: 2px solid dimgray;
+  background-color: #8b3d4b;
+  border-radius: 5px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .tableWrapper {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .tableWrapper {
+    width: 250px;
+  }
+  .inputText{
+    font-size: 20px;
+  }
+  .button{
+    font-size: 30px;
+  }
+}

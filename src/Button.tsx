@@ -1,5 +1,5 @@
 import React from "react";
-
+import s from './App.module.scss'
 
 type ButtonPropsType = {
     buttonValue: string;
@@ -12,7 +12,7 @@ export function Button(props: ButtonPropsType) {
         <button
             disabled={props.buttonDisabled}
             onClick={props.onClickHandler}
-            className={props.buttonDisabled ? "button-disabled" : "button"}
+            className={props.buttonDisabled ? s.buttonDisabled : s.button}
         >
             {props.buttonValue}
         </button>
