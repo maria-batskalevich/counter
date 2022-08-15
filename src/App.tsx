@@ -1,47 +1,54 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import "./App.css";
 import {CounterSettings} from "./CounterSettings";
 import {CounterTable} from "./CounterTable";
+import {useDispatch, useSelector} from "react-redux";
+import {AppStateType} from "./bll/store";
+import {incValueAC, isCountingAC, isErrorAC, maxValueAC, minValueAC, setValueAC} from "./bll/counterReducer";
 
 export const App = () => {
-    const [isError, setIsError] = useState<boolean>(false);
-    const [isCounting, setIsCounting] = useState<boolean>(false);
-    const [minValue, setMinValue] = useState<number>(0);
-    const [maxValue, setMaxValue] = useState<number>(5);
-    const [value, setValue] = useState<number>(minValue);
+    const value = useSelector<AppStateType, number>(state=> state.counter.value)
+    const minValue = useSelector<AppStateType, number>(state=> state.counter.minValue)
+    const maxValue = useSelector<AppStateType, number>(state=> state.counter.maxValue)
+    const isCounting = useSelector<AppStateType, boolean>(state=> state.counter.isCounting)
+    const isError = useSelector<AppStateType, boolean>(state=> state.counter.isError)
+    const dispatch = useDispatch()
 
-
-    useEffect(() => {
-        getFromLocalStorage();
-        setValue(minValue);
-    }, []);
+    const incValue = () => {
+        if (value <= maxValue) {
+            dispatch(incValueAC())
+        }
+    };
+    const resetValue = () => {
+        dispatch(setValueAC(0))
+    }
 
     const setNewMaxValue = (newMaxValue: number) => {
-        setIsCounting(false);
+        dispatch(isCountingAC(false))
 
         if (newMaxValue < 1 || newMaxValue <= minValue) {
-            setIsError(true);
+            dispatch(isErrorAC(true));
         } else if (newMaxValue >= 1 && newMaxValue > minValue) {
-            setIsError(false);
-            setMaxValue(newMaxValue);
+            dispatch(isErrorAC(false));
+            dispatch(maxValueAC(newMaxValue))
         }
     };
 
     const setNewMinValue = (newMinValue: number) => {
-        setIsCounting(false);
+        dispatch(isCountingAC(false))
 
         if (newMinValue < 0 || maxValue <= newMinValue) {
-            setIsError(true);
+            dispatch(isErrorAC(true));
         } else if (newMinValue >= 0 && maxValue > newMinValue) {
-            setIsError(false);
-            setMinValue(newMinValue);
+            dispatch(isErrorAC(false));
+            dispatch(minValueAC(newMinValue))
         }
     };
 
     const setValues = () => {
         setToLocalStorage();
-        setIsCounting(true);
-        setValue(minValue);
+        dispatch(isCountingAC(true))
+        dispatch(setValueAC(minValue));
     };
 
     const setToLocalStorage = () => {
@@ -53,21 +60,14 @@ export const App = () => {
         const minValueAsString = localStorage.getItem("minValue");
         const maxValueAsString = localStorage.getItem("maxValue");
         if (minValueAsString) {
-            setMinValue(JSON.parse(minValueAsString));
+            // setMinValue(JSON.parse(minValueAsString));
         }
         if (maxValueAsString) {
-            setMaxValue(JSON.parse(maxValueAsString));
+            // setMaxValue(JSON.parse(maxValueAsString));
         }
     };
 
-    const incValue = () => {
-        if (value <= maxValue) {
-            setValue((prev) => prev + 1);
-        }
-    };
-    const resetValue = () => {
-        setValue(minValue);
-    };
+;
 
     return (
         <div className={'appWrapper'}>
