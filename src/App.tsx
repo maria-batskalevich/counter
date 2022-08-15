@@ -7,11 +7,11 @@ import {AppStateType} from "./bll/store";
 import {incValueAC, isCountingAC, isErrorAC, maxValueAC, minValueAC, setValueAC} from "./bll/counterReducer";
 
 export const App = () => {
-    const value = useSelector<AppStateType, number>(state=> state.counter.value)
-    const minValue = useSelector<AppStateType, number>(state=> state.counter.minValue)
-    const maxValue = useSelector<AppStateType, number>(state=> state.counter.maxValue)
-    const isCounting = useSelector<AppStateType, boolean>(state=> state.counter.isCounting)
-    const isError = useSelector<AppStateType, boolean>(state=> state.counter.isError)
+    const value = useSelector<AppStateType, number>(state => state.counter.value)
+    const minValue = useSelector<AppStateType, number>(state => state.counter.minValue)
+    const maxValue = useSelector<AppStateType, number>(state => state.counter.maxValue)
+    const isCounting = useSelector<AppStateType, boolean>(state => state.counter.isCounting)
+    const isError = useSelector<AppStateType, boolean>(state => state.counter.isError)
     const dispatch = useDispatch()
 
     const incValue = () => {
@@ -46,28 +46,9 @@ export const App = () => {
     };
 
     const setValues = () => {
-        setToLocalStorage();
         dispatch(isCountingAC(true))
         dispatch(setValueAC(minValue));
     };
-
-    const setToLocalStorage = () => {
-        localStorage.setItem("minValue", JSON.stringify(minValue));
-        localStorage.setItem("maxValue", JSON.stringify(maxValue));
-    };
-
-    const getFromLocalStorage = () => {
-        const minValueAsString = localStorage.getItem("minValue");
-        const maxValueAsString = localStorage.getItem("maxValue");
-        if (minValueAsString) {
-            // setMinValue(JSON.parse(minValueAsString));
-        }
-        if (maxValueAsString) {
-            // setMaxValue(JSON.parse(maxValueAsString));
-        }
-    };
-
-;
 
     return (
         <div className={'appWrapper'}>
