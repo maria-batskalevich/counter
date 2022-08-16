@@ -33,7 +33,7 @@ export function CounterSettings(props: CounterSettingsPropsType) {
                         <span className={s.inputText}>min value: </span>
                         <input
                             className={props.isError ? s.inputError : s.inputLine}
-                            type={s.number}
+                            type={'number'}
                             onChange={updateMinValueHandler}
                             value={props.minValue}
                         />
