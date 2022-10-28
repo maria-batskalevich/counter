@@ -1,5 +1,6 @@
 body {
-  background-color: #6B5113;
+  background-color: #9B4F0F;
+  color: #1E434C;
 }
 
 .app {
@@ -18,7 +19,7 @@ body {
 }
 
 .tableWrapper {
-  border: #EEC972 3px solid;
+  border: #C99E10 3px solid;
   border-radius: 10px;
   padding: 15px;
   width: 500px;
@@ -29,7 +30,7 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: #EEC972;
+  background-color: #C99E10;
   border-radius: 10px;
   height: 150px;
   line-height: 150px;
@@ -40,7 +41,7 @@ body {
 .buttons {
   display: flex;
   justify-content: center;
-  border: #EEC972 3px solid;
+  border: #C99E10 3px solid;
   border-radius: 10px;
   padding: 15px;
 }
@@ -52,9 +53,9 @@ body {
   border: 1px solid #671101;
   border-radius: 10px;
   margin-left: 10px;
-  background-color: #EEC972;
+  background-color: #C99E10;
   font-size: 40px;
-  color: #423620;
+  color: #1E434C;
   font-weight: bold;
 }
 
@@ -65,13 +66,13 @@ body {
   border: 1px solid #671101;
   border-radius: 10px;
   margin-left: 10px;
-  background-color: #EEC972;
+  background-color: #C99E10;
   font-size: 40px;
-  color: #666666;
+  color: #1E434C;
 }
 
 .input {
-  background-color: #EEC972;
+  background-color: #C99E10;
   text-align: center;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -114,7 +115,7 @@ input {
   margin: 20px auto 20px auto;
   background-color: darkcyan;
   font-size: 100px;
-  color: #8b3d4b;
+  color: #8d230f;
 }
 
 .tableDisabled {
@@ -134,14 +135,14 @@ input {
 .textError {
   font-weight: bold;
   font-size: 30px;
-  color: #8b3d4b;
+  color: #8d230f;
 }
 
 .inputError {
   width: 100px;
   height: 30px;
   border: 2px solid dimgray;
-  background-color: #8b3d4b;
+  background-color: #8d230f;
   border-radius: 5px;
   margin-left: 10px;
   text-align: center;
